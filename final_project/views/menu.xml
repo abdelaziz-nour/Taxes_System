@@ -1,0 +1,53 @@
+<odoo>
+
+
+    <menuitem id="taxes_root"
+              name="Taxes Systemzzzzz"
+    />
+    <menuitem id="menu_reports_master"
+              name="Reports"
+              parent="taxes_root"
+    />
+
+    <menuitem id="menu_data_master"
+              name="Data"
+              parent="taxes_root"
+    />
+
+    <menuitem id="menu_accountant_settings_master"
+              name="Settings"
+              parent="taxes_root"
+    />
+
+    <!--                                                            -->
+    <menuitem id="menu_accountants_master"
+              name="Accountants"
+              parent="taxes_root"
+              action="base.action_res_users"
+
+    />
+    <menuitem id="menu_accountants_master"
+              name="Accountants"
+              parent="taxes_root"
+              action="base.action_res_users"
+
+    />
+
+    <menuitem id="menu_customer"
+              name="Customers"
+              parent="menu_data_master"
+              action="account.res_partner_action_customer"
+    />
+
+    <menuitem id="menu_invoices"
+              name="Invoices"
+              parent="menu_data_master"
+              action="account.action_move_out_invoice_type"
+    />
+
+        <menuitem id="menu_taxes_settings"
+              name="Taxes Settings"
+              parent="menu_accountant_settings_master"
+              action="account.action_tax_form"
+    />
+</odoo>

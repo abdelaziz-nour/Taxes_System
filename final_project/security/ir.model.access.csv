@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_final_admin,access.final.admin,model_final_admin,,1,1,1,1
+access_final_report,access.final.report,model_final_report,,1,1,1,1
+access_final_accountant,access.final.accountant,model_final_accountant,,1,1,1,1
+access_profitloss_report,access.profitloss.report,model_profitloss_report,,1,1,1,1
+
+
+
+
