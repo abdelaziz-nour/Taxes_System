@@ -1,0 +1,61 @@
+<odoo>
+    <data>
+        <!--         explicit list view definition -->
+
+        <record model="ir.ui.view" id="final_project.custom_system">
+            <field name="name">Custom System list</field>
+            <field name="model">custom.system.report</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="custom_system_view" model="ir.ui.view">
+            <field name="name">custom system Report</field>
+            <field name="model">custom.system.report</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                        <group>
+
+                        <group>
+                            <field name="date_from"/>
+                            <field name="date_to"/>
+                            <field name="create_date"/>
+                        </group>
+                        </group>
+
+
+                        <footer>
+                            <button name="get_system_reports" string="Print" type="object" default_focus="1"
+                                    class="oe_highlight"/>
+
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="action_custom_system">
+            <field name="name">Custom system Reports</field>
+            <field name="res_model">custom.system.report</field>
+            <field name="view_mode">tree,form,kanban</field>
+        </record>
+
+
+        <menuitem name="Custom System Report" id="menu_custom_system" parent="menu_reports_master"
+                  action="action_custom_system"/>
+
+
+    </data>
+</odoo>

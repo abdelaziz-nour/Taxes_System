@@ -1,0 +1,69 @@
+<odoo>
+    <data>
+        <!--         explicit list view definition -->
+
+        <record model="ir.ui.view" id="custom_profitloss">
+            <field name="name">Custom Profit-Loss list</field>
+            <field name="model">custom.profitloss.report</field>
+            <field name="arch" type="xml">
+                <tree decoration-info="target_move in ('posted','all')">
+                    <field name="name"/>
+                    <field name="customer_id" widget="many2one_avatar"/>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                    <field name="accountant"/>
+                    <field name="create_date"/>
+                    <field name="target_move" widget='badge' decoration-success="target_move == 'posted'"
+                           decoration-danger="target_move == 'all'"/>
+
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="custom_profitloss_view" model="ir.ui.view">
+            <field name="name">custom Profit-Loss Report</field>
+            <field name="model">custom.profitloss.report</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                        <group>
+                            <group>
+                            <field name="customer_id" widget="many2one_avatar"/>
+                            <field name="target_move" widget="radio"/>
+                        </group>
+                        <group>
+                            <field name="date_from"/>
+                            <field name="date_to"/>
+                            <field name="create_date"/>
+                        </group>
+                        </group>
+
+
+                        <footer>
+                            <button name="get_report_values" string="Print" type="object" default_focus="1"
+                                    class="oe_highlight"/>
+
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="action_custom_profitloss">
+            <field name="name">Custom Profit-loss Reports</field>
+            <field name="res_model">custom.profitloss.report</field>
+            <field name="view_mode">tree,form,kanban</field>
+        </record>
+
+
+        <menuitem name="Custom Profit-Loss Report" id="menu_custom_profitloss" parent="menu_reports_master"
+                  action="action_custom_profitloss"/>
+
+
+    </data>
+</odoo>

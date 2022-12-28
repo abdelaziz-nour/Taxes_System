@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <data noupdate="1">
+
+
+        <record id="tax_report" model="ir.sequence">
+            <field name="name">Tax account</field>
+            <field name="code">custom.tax.sequence</field>
+            <field name="prefix">TA</field>
+            <field name="padding">6</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="profitloss_seq" model="ir.sequence">
+            <field name="name">Profit and Loss account</field>
+            <field name="code">custom.profitloss.sequence</field>
+            <field name="prefix">PL</field>
+            <field name="padding">6</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="accountant_seq" model="ir.sequence">
+            <field name="name">Accountants Report</field>
+            <field name="code">custom.accountant.sequence</field>
+            <field name="prefix">AC</field>
+            <field name="padding">6</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="system_seq" model="ir.sequence">
+            <field name="name">System Report</field>
+            <field name="code">custom.system.sequence</field>
+            <field name="prefix">SY</field>
+            <field name="padding">6</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+
+</odoo>
