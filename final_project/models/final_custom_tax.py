@@ -28,7 +28,7 @@ class CustomTaxReport(models.Model):
     computed_tax = fields.Text(compute='_compute_computed_tax', store=True)
     computed_total = fields.Integer(compute='_compute_computed_total', store=True)
 
-    @api.depends('customer_id', 'date_from', 'date_to')
+    @api.depends('customer_id', 'date_from', 'date_to', 'target_move')
     def _compute_computed_names(self):
         customer = self.customer_id
         date_from = self.date_from
@@ -53,7 +53,7 @@ class CustomTaxReport(models.Model):
 
         self.computed_names = invoices_names
 
-    @api.depends('customer_id', 'date_from', 'date_to')
+    @api.depends('customer_id', 'date_from', 'date_to', 'target_move')
     def _compute_computed_amount(self):
         customer = self.customer_id
         date_from = self.date_from
@@ -79,7 +79,7 @@ class CustomTaxReport(models.Model):
 
         self.computed_amount = invoices_amount
 
-    @api.depends('customer_id', 'date_from', 'date_to')
+    @api.depends('customer_id', 'date_from', 'date_to', 'target_move')
     def _compute_computed_tax(self):
         customer = self.customer_id
         date_from = self.date_from
@@ -106,7 +106,7 @@ class CustomTaxReport(models.Model):
 
         self.computed_tax = invoices_tax
 
-    @api.depends('customer_id', 'date_from', 'date_to')
+    @api.depends('customer_id', 'date_from', 'date_to', 'target_move')
     def _compute_computed_total(self):
         customer = self.customer_id
         date_from = self.date_from

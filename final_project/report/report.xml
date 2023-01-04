@@ -12,5 +12,26 @@
 
     </record>
 
+    <record id="action_custom_profitloss_report" model="ir.actions.report">
+        <field name="name">Custom profit and loss Report</field>
+        <field name="model">custom.profitloss.report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">final_project.custom_profitloss_report</field>
+        <field name="report_file">final_project.custom_profitloss_report</field>
+        <field name="binding_model_id" ref="model_custom_profitloss_report"/>
+        <field name="binding_type">report</field>
+
+    </record>
+
+        <record id="action_custom_accountant_report" model="ir.actions.report">
+        <field name="name">Custom Accountant Report</field>
+        <field name="model">custom.accountant.report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">final_project.custom_accountant_report</field>
+        <field name="report_file">final_project.custom_accountant_report</field>
+        <field name="binding_model_id" ref="model_custom_accountant_report"/>
+        <field name="binding_type">report</field>
+
+    </record>
 
 </odoo>

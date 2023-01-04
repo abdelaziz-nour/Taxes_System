@@ -26,6 +26,81 @@ class AccountantReport(models.Model):
     admin = fields.Many2one('res.users', string="Created By", default=lambda self: self.env.uid, readonly=True, required=True )
     company_id = fields.Many2one('res.company', string='Company', required=True, default=lambda self: self.env.company)
 
+    computed_profitloss_reports_names = fields.Text(compute='_compute_accountant_profitloss_reports_names', store=True)
+    computed_profitloss_reports_count = fields.Integer(compute='_compute_accountant_profitloss_reports_count', store=True)
+    computed_tax_reports_names = fields.Text(compute='_compute_accountant_tax_reports_names', store=True)
+    computed_tax_reports_count = fields.Integer(compute='_compute_accountant_tax_reports_count', store=True)
+
+    @api.depends('accountant_id', 'date_from', 'date_to')
+    def _compute_accountant_profitloss_reports_names(self):
+        # Get the customer and start/end dates from the data passed to the report
+        accountant = self.accountant_id.user_ids.id
+        start_date = self.date_from
+        end_date = self.date_to
+        profitloss_reports_names = []
+
+        profitloss_reports = self.env['custom.profitloss.report'].search([
+            ('accountant', '=', accountant),
+            ('create_date', '>=', start_date),
+            ('create_date', '<=', end_date),
+        ])
+
+        for report in profitloss_reports:
+            profitloss_reports_names.append(report.name)
+        self.computed_profitloss_reports_names = profitloss_reports_names
+
+    @api.depends('accountant_id', 'date_from', 'date_to')
+    def _compute_accountant_profitloss_reports_count(self):
+        # Get the customer and start/end dates from the data passed to the report
+        accountant = self.accountant_id.user_ids.id
+        start_date = self.date_from
+        end_date = self.date_to
+        profitloss_reports_count = 0
+
+        profitloss_reports = self.env['custom.profitloss.report'].search([
+            ('accountant', '=', accountant),
+            ('create_date', '>=', start_date),
+            ('create_date', '<=', end_date),
+        ])
+
+        for report in profitloss_reports:
+            profitloss_reports_count += 1
+        self.computed_profitloss_reports_count = profitloss_reports_count
+
+    @api.depends('accountant_id', 'date_from', 'date_to')
+    def _compute_accountant_tax_reports_names(self):
+        accountant = self.accountant_id.user_ids.id
+        start_date = self.date_from
+        end_date = self.date_to
+        tax_reports_names = []
+
+        profitloss_reports = self.env['custom.tax.report'].search([
+            ('accountant', '=', accountant),
+            ('create_date', '>=', start_date),
+            ('create_date', '<=', end_date),
+        ])
+
+        for report in profitloss_reports:
+            tax_reports_names.append(report.name)
+        self.computed_tax_reports_names = tax_reports_names
+
+    @api.depends('accountant_id', 'date_from', 'date_to')
+    def _compute_accountant_tax_reports_count(self):
+        accountant = self.accountant_id.user_ids.id
+        start_date = self.date_from
+        end_date = self.date_to
+        tax_reports_count = 0
+
+        taxes_reports = self.env['custom.tax.report'].search([
+            ('accountant', '=', accountant),
+            ('create_date', '>=', start_date),
+            ('create_date', '<=', end_date),
+        ])
+
+        for report in taxes_reports:
+            tax_reports_count += 1
+        self.computed_tax_reports_count = tax_reports_count
+
     @api.model
     def create(self, vals):
         vals['name'] = self.env['ir.sequence'].next_by_code('custom.accountant.sequence')
@@ -40,7 +115,6 @@ class AccountantReport(models.Model):
         tax_reports_count = 0
 
         profitloss_reports = self.env['custom.profitloss.report'].search([
-
             ('accountant', '=', accountant),
             ('create_date', '>=', start_date),
             ('create_date', '<=', end_date),
@@ -52,14 +126,19 @@ class AccountantReport(models.Model):
             ('create_date', '<=', end_date),
         ])
 
-        for report in profitloss_reports:
-            print(report.name)
-            profitloss_reports_count += 1
-        print(profitloss_reports_count)
-        for report in taxes_reports:
-            print(report.name)
-            tax_reports_count += 1
-        print(tax_reports_count)
+        # for report in profitloss_reports:
+        #     print(report.name)
+        #     profitloss_reports_count += 1
+        # print(profitloss_reports_count)
+        # for report in taxes_reports:
+        #     print(report.name)
+        #     tax_reports_count += 1
+        # print(tax_reports_count)
+        print(self.computed_profitloss_reports_names)
+        print(self.computed_profitloss_reports_count)
+        print(self.computed_tax_reports_names)
+        print(self.computed_tax_reports_count)
+
 
 class SystemReport(models.Model):
     _name = 'custom.system.report'

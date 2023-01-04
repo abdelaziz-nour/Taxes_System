@@ -25,14 +25,16 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'report/report.xml',
-        'report/custom_tax.xml',
         'data/seq.xml',
         'views/menu.xml',
         'views/custom_tax.xml',
         'views/custom_accountant.xml',
         'views/custom_profitloss.xml',
         'views/custom_system.xml',
+        'report/report.xml',
+        'report/custom_tax.xml',
+        'report/custom_profitloss.xml',
+        'report/custom_accountant.xml',
 
     ],
     # only loaded in demonstration mode

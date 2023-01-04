@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="custom_profitloss_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.internal_layout">
+                    <div class="page">
+                        <h1><div style="text-align:center;"> Profit and Loss</div></h1>
+                        <br style="line-height: 20px;" />
+
+                        <div class="row mt32 mb32">
+                            <div class="col-4">
+                                <strong>Target Moves:</strong>
+                                <span t-if="docs.target_move == 'all'">All Entries</span>
+                                <span t-if="docs.target_move == 'posted'">All Posted Entries</span>
+                                <div>
+                                    <strong>Accountant:</strong>
+                                    <span t-esc="docs.accountant.display_name"/>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <p>
+                                    <t t-if="docs.date_from">
+                                        <strong>Date from :</strong>
+                                        <span t-esc="docs.date_from"/>
+                                        <br/>
+                                    </t>
+                                    <t t-if="docs.date_to">
+                                        <strong>Date to :</strong>
+                                        <span t-esc="docs.date_to"/>
+                                    </t>
+                                </p>
+                            </div>
+                            <div class="col-4">
+                                <p>
+                                    <t t-if="docs.customer_id">
+                                        <strong>Customer :</strong>
+                                        <span t-esc="docs.customer_id.display_name"/>
+                                        <br/>
+                                    </t>
+                                    <t t-if="docs.date_to">
+                                        <strong>Report ID :</strong>
+                                        <span t-esc="docs.name"/>
+                                    </t>
+                                </p>
+                            </div>
+                        </div>
+                        <br style="line-height: 10px;" />
+                        <table class="table table-sm table-reports">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th class="text-right">Balance</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Income</td>
+                                    <td class="text-right">
+                                        <span t-esc="docs.computed_revenue"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Expense</td>
+                                    <td class="text-right">
+                                        <span t-esc="docs.computed_costs"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Profit and Loss</td>
+                                    <td class="text-right">
+                                        <span t-esc="docs.computed_profitloss"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
