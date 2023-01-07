@@ -33,11 +33,11 @@
                         <div class="col-4">
                             <strong>Target Moves:</strong>
                             <strong></strong>
-                            <p>
                                 <span t-if="docs.target_move == 'all'">All Entries</span>
                                 <span t-if="docs.target_move == 'posted'">All Posted Entries</span>
-                            </p>
-
+                                <br/>
+                                    <strong>Accountant :</strong>
+                                    <span t-esc="docs.accountant.display_name"/>
                         </div>
 
                     </div>

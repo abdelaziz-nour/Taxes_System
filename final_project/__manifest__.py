@@ -35,6 +35,7 @@
         'report/custom_tax.xml',
         'report/custom_profitloss.xml',
         'report/custom_accountant.xml',
+        'report/custom_system.xml',
 
     ],
     # only loaded in demonstration mode

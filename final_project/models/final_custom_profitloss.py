@@ -153,4 +153,4 @@ class ProfitLossReport(models.Model):
         # print(profit_loss)
         # print('created by')
         # print(accountant.id)
-
+        return "hiiiiiiiiii"

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="custom_system_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.internal_layout">
+                    <div class="page">
+                        <h1>
+                            <div style="text-align:center;">System Report</div>
+                        </h1>
+                        <br style="line-height: 20px;"/>
+
+                        <div class="row mt32 mb32">
+                            <div class="col-4">
+                                <div>
+                                    <strong>Admin:</strong>
+                                    <span t-esc="docs.accountant.display_name"/>
+                                </div>
+                                <div>
+                                    <strong>All Reports Count:</strong>
+                                    <t t-set="total_count"
+                                       t-value="docs.computed_taxes_count + docs.computed_profitloss_count"/>
+                                    <span t-esc="total_count"/>
+                                </div>
+
+                            </div>
+                            <div class="col-4">
+                                <p>
+                                    <strong>Date from :</strong>
+                                    <span t-esc="docs.date_from"/>
+                                    <br/>
+                                    <strong>Date to :</strong>
+                                    <span t-esc="docs.date_to"/>
+                                </p>
+                            </div>
+                            <div class="col-4">
+                                <p>
+                                    <strong>Total Taxes Amount :</strong>
+                                    <span t-esc="docs.computed_taxes_amount"/>
+                                    <br/>
+                                    <strong>Report ID :</strong>
+                                    <span t-esc="docs.name"/>
+                                </p>
+                            </div>
+                        </div>
+                        <br style="line-height: 10px;"/>
+                        <table class="table table-sm table-reports">
+                            <thead>
+                                <tr>
+                                    <th>Taxes Reports</th>
+                                    <th class="text-right">Profit and Loss Reports</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="docs" t-as="o">
+                                    <td>
+                                        <t t-if="o.computed_taxes_names">
+                                            <t t-set="elements"
+                                               t-value="o.computed_taxes_names.strip('[').strip(']').strip('\'').split('\', \'')"/>
+                                            <t t-foreach="elements" t-as="element">
+                                                <span t-esc="element"/>
+                                                <br/>
+                                            </t>
+                                        </t>
+                                    </td>
+                                    <td class="text-right">
+                                        <t t-if="o.computed_profitloss_names">
+                                            <t t-set="elements"
+                                               t-value="o.computed_profitloss_names.strip('[').strip(']').strip('\'').split('\', \'')"/>
+                                            <t t-foreach="elements" t-as="element">
+                                                <span t-esc="element"/>
+                                                <br/>
+                                            </t>
+                                        </t>
+                                    </td>
+                                </tr>
+                                <tr t-foreach="docs" t-as="o">
+                                    <td>
+                                        <span t-esc="o.computed_taxes_count"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-esc="o.computed_profitloss_count"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
