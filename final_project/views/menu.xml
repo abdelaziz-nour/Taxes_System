@@ -2,7 +2,7 @@
 
 
     <menuitem id="taxes_root"
-              name="Taxes Systemzzzzz"
+              name="Taxes System"
     />
     <menuitem id="menu_reports_master"
               name="Reports"
@@ -17,6 +17,7 @@
     <menuitem id="menu_accountant_settings_master"
               name="Settings"
               parent="taxes_root"
+              groups="base.group_system"
     />
 
     <!--                                                            -->
@@ -24,6 +25,7 @@
               name="Accountants"
               parent="taxes_root"
               action="base.action_res_users"
+              groups="base.group_system"
 
     />
     <menuitem id="menu_accountants_master"

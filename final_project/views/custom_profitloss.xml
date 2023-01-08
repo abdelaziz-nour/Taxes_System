@@ -3,10 +3,10 @@
         <!--         explicit list view definition -->
 
         <record model="ir.ui.view" id="custom_profitloss">
-            <field name="name">Custom Profit-Loss list</field>
+            <field name="name">Profit-Loss list</field>
             <field name="model">custom.profitloss.report</field>
             <field name="arch" type="xml">
-                <tree decoration-info="target_move in ('posted','all')">
+                <tree delete="0" decoration-info="target_move in ('posted','all')">
                     <field name="name"/>
                     <field name="customer_id" widget="many2one_avatar"/>
                     <field name="date_from"/>
@@ -22,10 +22,10 @@
         </record>
 
         <record id="custom_profitloss_view" model="ir.ui.view">
-            <field name="name">custom Profit-Loss Report</field>
+            <field name="name">Profit-Loss Report</field>
             <field name="model">custom.profitloss.report</field>
             <field name="arch" type="xml">
-                <form>
+                <form edit="0" delete="0">
                     <sheet>
                         <h1>
                             <field name="name"/>
@@ -43,11 +43,11 @@
                         </group>
 
 
-                        <footer>
-                            <button name="get_report_values" string="Print" type="object" default_focus="1"
-                                    class="oe_highlight"/>
+<!--                        <footer>-->
+<!--                            <button name="get_report_values" string="Print" type="object" default_focus="1"-->
+<!--                                    class="oe_highlight"/>-->
 
-                        </footer>
+<!--                        </footer>-->
                     </sheet>
                 </form>
             </field>
@@ -55,14 +55,17 @@
 
 
         <record model="ir.actions.act_window" id="action_custom_profitloss">
-            <field name="name">Custom Profit-loss Reports</field>
+            <field name="name">Profit-loss Reports</field>
             <field name="res_model">custom.profitloss.report</field>
             <field name="view_mode">tree,form,kanban</field>
         </record>
 
 
-        <menuitem name="Custom Profit-Loss Report" id="menu_custom_profitloss" parent="menu_reports_master"
-                  action="action_custom_profitloss"/>
+        <menuitem name="Profit-Loss Report"
+                  id="menu_custom_profitloss"
+                  parent="menu_reports_master"
+                  action="action_custom_profitloss"
+        />
 
 
     </data>

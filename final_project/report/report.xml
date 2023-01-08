@@ -2,7 +2,7 @@
 
 <odoo>
     <record id="action_custom_tax_report" model="ir.actions.report">
-        <field name="name">Custom Tax Report</field>
+        <field name="name">Tax Report</field>
         <field name="model">custom.tax.report</field>
         <field name="report_type">qweb-pdf</field>
         <field name="report_name">final_project.custom_tax_report</field>
@@ -13,7 +13,7 @@
     </record>
 
     <record id="action_custom_profitloss_report" model="ir.actions.report">
-        <field name="name">Custom profit and loss Report</field>
+        <field name="name">profit and loss Report</field>
         <field name="model">custom.profitloss.report</field>
         <field name="report_type">qweb-pdf</field>
         <field name="report_name">final_project.custom_profitloss_report</field>
@@ -24,7 +24,7 @@
     </record>
 
     <record id="action_custom_accountant_report" model="ir.actions.report">
-        <field name="name">Custom Accountant Report</field>
+        <field name="name">Accountant Report</field>
         <field name="model">custom.accountant.report</field>
         <field name="report_type">qweb-pdf</field>
         <field name="report_name">final_project.custom_accountant_report</field>
@@ -35,7 +35,7 @@
     </record>
 
     <record id="action_custom_system_report" model="ir.actions.report">
-        <field name="name">Custom System Report</field>
+        <field name="name">System Report</field>
         <field name="model">custom.system.report</field>
         <field name="report_type">qweb-pdf</field>
         <field name="report_name">final_project.custom_system_report</field>

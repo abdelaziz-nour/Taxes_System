@@ -39,13 +39,17 @@ class CustomTaxReport(models.Model):
                 ("partner_id", "=", customer.id),
                 ("date", ">=", date_from),
                 ("date", "<=", date_to),
-                ("state", "=", target_move)
+                ("state", "=", target_move),
+                ('move_type', '=', 'out_invoice')
             ])
         else:
             invoices = self.env["account.move"].search([
                 ("partner_id", "=", customer.id),
                 ("date", ">=", date_from),
-                ("date", "<=", date_to)])
+                ("date", "<=", date_to),
+                ('move_type', '=', 'out_invoice')
+            ])
+
         invoices_names = []
 
         for invoice in invoices:
@@ -65,13 +69,16 @@ class CustomTaxReport(models.Model):
                 ("partner_id", "=", customer.id),
                 ("date", ">=", date_from),
                 ("date", "<=", date_to),
-                ("state", "=", target_move)
+                ("state", "=", target_move),
+                ('move_type', '=', 'out_invoice')
             ])
         else:
             invoices = self.env["account.move"].search([
                 ("partner_id", "=", customer.id),
                 ("date", ">=", date_from),
-                ("date", "<=", date_to)])
+                ("date", "<=", date_to),
+                ('move_type', '=', 'out_invoice')
+            ])
 
         invoices_amount = []
         for invoice in invoices:
@@ -91,13 +98,16 @@ class CustomTaxReport(models.Model):
                 ("partner_id", "=", customer.id),
                 ("date", ">=", date_from),
                 ("date", "<=", date_to),
-                ("state", "=", target_move)
+                ("state", "=", target_move),
+                ('move_type', '=', 'out_invoice')
             ])
         else:
             invoices = self.env["account.move"].search([
                 ("partner_id", "=", customer.id),
                 ("date", ">=", date_from),
-                ("date", "<=", date_to)])
+                ("date", "<=", date_to),
+                ('move_type', '=', 'out_invoice')
+            ])
 
         invoices_tax = []
 
@@ -118,13 +128,16 @@ class CustomTaxReport(models.Model):
                 ("partner_id", "=", customer.id),
                 ("date", ">=", date_from),
                 ("date", "<=", date_to),
-                ("state", "=", target_move)
+                ("state", "=", target_move),
+                ('move_type', '=', 'out_invoice')
             ])
         else:
             invoices = self.env["account.move"].search([
                 ("partner_id", "=", customer.id),
                 ("date", ">=", date_from),
-                ("date", "<=", date_to)])
+                ("date", "<=", date_to),
+                ('move_type', '=', 'out_invoice')
+            ])
 
         total_amount = 0
 
@@ -138,66 +151,66 @@ class CustomTaxReport(models.Model):
         vals['name'] = self.env['ir.sequence'].next_by_code('custom.tax.sequence')
         return super(CustomTaxReport, self).create(vals)
 
-    def generate_report(self):
-        customer = self.customer_id
-        date_from = self.date_from
-        date_to = self.date_to
-        target_move = self.target_move
+    # def generate_report(self):
+    #     customer = self.customer_id
+    #     date_from = self.date_from
+    #     date_to = self.date_to
+    #     target_move = self.target_move
+    #
+    #     if target_move == "posted":
+    #         invoices = self.env["account.move"].search([
+    #             ("partner_id", "=", customer.id),
+    #             ("date", ">=", date_from),
+    #             ("date", "<=", date_to),
+    #             ("state", "=", target_move)
+    #         ])
+    #     else:
+    #         invoices = self.env["account.move"].search([
+    #             ("partner_id", "=", customer.id),
+    #             ("date", ">=", date_from),
+    #             ("date", "<=", date_to)])
+    #     print('ttt')
+    #     print(target_move)
+    #     invoices_names = []
+    #     invoices_untaxed = []
+    #     invoices_taxes = []
+    #     invoices_total = []
 
-        if target_move == "posted":
-            invoices = self.env["account.move"].search([
-                ("partner_id", "=", customer.id),
-                ("date", ">=", date_from),
-                ("date", "<=", date_to),
-                ("state", "=", target_move)
-            ])
-        else:
-            invoices = self.env["account.move"].search([
-                ("partner_id", "=", customer.id),
-                ("date", ">=", date_from),
-                ("date", "<=", date_to)])
-        print('ttt')
-        print(target_move)
-        invoices_names = []
-        invoices_untaxed = []
-        invoices_taxes = []
-        invoices_total = []
+    # get invoices amount and date
+    # total_amount = 0
+    # for invoice in invoices:
+    #     invoices_names.append(invoice.name)
+    #     invoices_untaxed.append(invoice.amount_untaxed)
+    #     invoices_taxes.append(invoice.amount_tax)
+    #     invoices_total.append(invoice.amount_total)
+    #     total_amount += invoice.amount_total
+    # print('create Date :')
+    # print(invoice.date)
+    # print('created by')
+    # print(invoice.invoice_user_id.display_name)
+    # print('Invoice Name')
+    # print(invoice.name)
+    # print('Invoice amount_total')
+    # print(invoice.amount_untaxed)
+    # print('Invoice amount_tax')
+    # print(invoice.amount_tax)
+    # print('------------')
 
-        # get invoices amount and date
-        total_amount = 0
-        for invoice in invoices:
-            invoices_names.append(invoice.name)
-            invoices_untaxed.append(invoice.amount_untaxed)
-            invoices_taxes.append(invoice.amount_tax)
-            invoices_total.append(invoice.amount_total)
-            total_amount += invoice.amount_total
-            # print('create Date :')
-            # print(invoice.date)
-            # print('created by')
-            # print(invoice.invoice_user_id.display_name)
-            # print('Invoice Name')
-            # print(invoice.name)
-            # print('Invoice amount_total')
-            # print(invoice.amount_untaxed)
-            # print('Invoice amount_tax')
-            # print(invoice.amount_tax)
-            # print('------------')
+    # print('total :')
+    # print(total_amount)
 
-        # print('total :')
-        # print(total_amount)
-
-        data = {
-            'invoices names': invoices_names,
-            'invoices untaxed': invoices_untaxed,
-            'invoices taxes': invoices_taxes,
-            'invoices total': invoices_total,
-            'total amount': total_amount
-
-        }
-        # nm = self.env["custom.tax.report"].search([])
-        # #print(invoices_names)
-        # print(nm)
-        # print(self.computed_names)
-        # print(self.computed_amount)
-        # print(self.computed_tax)
-        # print(self.computed_total)
+    # data = {
+    #     'invoices names': invoices_names,
+    #     'invoices untaxed': invoices_untaxed,
+    #     'invoices taxes': invoices_taxes,
+    #     'invoices total': invoices_total,
+    #     'total amount': total_amount
+    #
+    # }
+    # nm = self.env["custom.tax.report"].search([])
+    # #print(invoices_names)
+    # print(nm)
+    # print(self.computed_names)
+    # print(self.computed_amount)
+    # print(self.computed_tax)
+    # print(self.computed_total)
