@@ -3,7 +3,7 @@
 <odoo>
     <data noupdate="1">
 
-
+<!--        Tax report sequence start by TA and has 6 number digits-->
         <record id="tax_report" model="ir.sequence">
             <field name="name">Tax account</field>
             <field name="code">custom.tax.sequence</field>
@@ -11,6 +11,7 @@
             <field name="padding">6</field>
             <field name="company_id" eval="False"/>
         </record>
+<!--        Tax report sequence start by PL and has 6 number digits-->
         <record id="profitloss_seq" model="ir.sequence">
             <field name="name">Profit and Loss account</field>
             <field name="code">custom.profitloss.sequence</field>
@@ -18,7 +19,7 @@
             <field name="padding">6</field>
             <field name="company_id" eval="False"/>
         </record>
-
+<!--        Tax report sequence start by AC and has 6 number digits-->
         <record id="accountant_seq" model="ir.sequence">
             <field name="name">Accountants Report</field>
             <field name="code">custom.accountant.sequence</field>
@@ -26,7 +27,7 @@
             <field name="padding">6</field>
             <field name="company_id" eval="False"/>
         </record>
-
+<!--        Tax report sequence start by SY and has 6 number digits-->
         <record id="system_seq" model="ir.sequence">
             <field name="name">System Report</field>
             <field name="code">custom.system.sequence</field>

@@ -1,26 +1,26 @@
 <odoo>
 
-
+    <!--    Root menu-->
     <menuitem id="taxes_root"
               name="Taxes System"
     />
+    <!--    Main menu Reports-->
     <menuitem id="menu_reports_master"
               name="Reports"
               parent="taxes_root"
     />
-
+    <!--    Main menu Data-->
     <menuitem id="menu_data_master"
               name="Data"
               parent="taxes_root"
     />
-
+    <!--    Main menu settings(Only viewed by admin)-->
     <menuitem id="menu_accountant_settings_master"
               name="Settings"
               parent="taxes_root"
               groups="base.group_system"
     />
-
-    <!--                                                            -->
+    <!--    Main menu Accountant(Only viewed by admin)-->
     <menuitem id="menu_accountants_master"
               name="Accountants"
               parent="taxes_root"
@@ -28,31 +28,25 @@
               groups="base.group_system"
 
     />
-    <menuitem id="menu_accountants_master"
-              name="Accountants"
-              parent="taxes_root"
-              action="base.action_res_users"
-
-    />
-
+    <!--    Sub menu Customers(under main menu data)-->
     <menuitem id="menu_customer"
               name="Customers"
               parent="menu_data_master"
               action="account.res_partner_action_customer"
     />
-
+    <!--    Sub menu Customers Invoices(under main menu data)-->
     <menuitem id="menu_invoices"
               name="Customers Invoices"
               parent="menu_data_master"
               action="account.action_move_out_invoice_type"
     />
-
+    <!--    Sub menu Vendor Bills(under main menu data)-->
         <menuitem id="menu_bills"
               name="Vendor Bills"
               parent="menu_data_master"
               action="account.action_move_in_invoice_type"
     />
-
+    <!--    Sub menu Taxes Settings(under main menu settings)-->
         <menuitem id="menu_taxes_settings"
               name="Taxes Settings"
               parent="menu_accountant_settings_master"

@@ -7,8 +7,10 @@
             <t t-set="data_report_dpi" t-value="110"/>
             <t t-call="web.internal_layout">
                 <div class="page">
+<!--                    page header-->
                     <h3>Tax Report</h3>
                     <div class="row">
+                        <!--    separate the row into 4 columns-->
                         <div class="col-4">
                             <strong>Company:</strong>
                             <strong><span t-esc="res_company.name"/></strong>
@@ -16,9 +18,8 @@
                                 <strong>Customer :</strong>
                                 <span t-esc="docs.customer_id.display_name"/>
                             </p>
-
-
                         </div>
+                        <!--    separate the row into 4 columns-->
                         <div class="col-4">
                             <t>
                                 <strong>Date from :</strong>
@@ -30,6 +31,7 @@
                                 <span t-esc="docs.date_to"/>
                             </t>
                         </div>
+                        <!--    separate the row into 4 columns-->
                         <div class="col-4">
                             <strong>Target Moves:</strong>
                             <strong></strong>
@@ -41,9 +43,12 @@
                         </div>
 
                     </div>
+<!--                    table definition-->
                     <table class="table table-sm table-reports">
                         <thead>
+<!--                            table row with the elements assigns to the left-->
                             <tr align="left">
+<!--                                table headers-->
                                 <th>Invoices</th>
                                 <th>Amounts</th>
                                 <th>Taxes</th>
@@ -51,7 +56,8 @@
                         </thead>
                         <tr align="left" t-foreach="docs" t-as="o">
                             <td>
-                                <t t-if="o.computed_names">
+<!--                                            reformat the list of string and spilite each element ,-->
+<!--                                            taking out the [] and the '' and print what between them.-->                                <t t-if="o.computed_names">
                                     <t t-set="elements"
                                        t-value="o.computed_names.strip('[').strip(']').strip('\'').split('\', \'')"/>
                                     <t t-foreach="elements" t-as="element">
@@ -61,7 +67,8 @@
                                 </t>
                             </td>
                             <td>
-                                <t t-if="o.computed_amount">
+<!--                                            reformat the list of string and spilite each element ,-->
+<!--                                            taking out the [] and the '' and print what between them.-->                                <t t-if="o.computed_amount">
                                     <t t-set="elements" t-value="o.computed_amount.strip('[').strip(']').split(',')"/>
                                     <t t-foreach="elements" t-as="amount">
                                         <span t-esc="amount.strip()"/>
@@ -69,8 +76,8 @@
                                     </t>
                                 </t>
                             </td>
-
-                            <td>
+<!--                                            reformat the list of string and spilite each element ,-->
+<!--                                            taking out the [] and the '' and print what between them.-->                            <td>
                                 <t t-if="o.computed_tax">
                                     <t t-set="elements" t-value="o.computed_tax.strip('[').strip(']').split(',')"/>
                                     <t t-foreach="elements" t-as="amount">

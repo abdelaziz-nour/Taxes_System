@@ -1,5 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_final_admin,access.final.admin,model_final_admin,,1,1,1,1
 access_custom_tax_report,access.custom.tax.report,model_custom_tax_report,,1,1,1,1
 access_custom_profitloss_report,access.custom.profitloss.report,model_custom_profitloss_report,,1,1,1,1
 access_custom_accountant_report,access.custom.accountant.report,model_custom_accountant_report,,1,1,1,1

@@ -1,0 +1,384 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* om_account_accountant
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-07 14:33+0000\n"
+"PO-Revision-Date: 2022-08-07 14:33+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: om_account_accountant
+#: model:ir.actions.act_window,name:om_account_accountant.action_account_group_action
+#: model:ir.ui.menu,name:om_account_accountant.menu_account_group
+msgid "Account Groups"
+msgstr "مجموعات الحساب"
+
+#. module: om_account_accountant
+#: model:ir.actions.act_window,name:om_account_accountant.action_account_account_tag
+#: model:ir.ui.menu,name:om_account_accountant.menu_account_tag
+msgid "Account Tags"
+msgstr "وسوم الحساب"
+
+#. module: om_account_accountant
+#: model:ir.ui.menu,name:om_account_accountant.account_type_menu
+msgid "Account Types"
+msgstr "أنواع الحسابات"
+
+#. module: om_account_accountant
+#: model_terms:ir.ui.view,arch_db:om_account_accountant.res_config_settings_view_form
+#: model_terms:ir.ui.view,arch_db:om_account_accountant.view_partner_property_form
+msgid "Accounting"
+msgstr "محاسبة"
+
+#. module: om_account_accountant
+#: model:res.groups,name:om_account_accountant.group_fiscal_year
+msgid "Allow to define fiscal years of more or less than a year"
+msgstr "السماح بتحديد السنوات المالية لأكثر أو أقل من سنة"
+
+#. module: om_account_accountant
+#: model_terms:ir.ui.view,arch_db:om_account_accountant.res_config_settings_view_form
+msgid "Anglo-Saxon Accounting"
+msgstr "محاسبة (أنجلو ساكسون) "
+
+#. module: om_account_accountant
+#: model:ir.ui.menu,name:om_account_accountant.menu_accounting_statement_bank
+msgid "Bank Statements"
+msgstr "كشف الحساب المصرفي"
+
+#. module: om_account_accountant
+#: model:ir.ui.menu,name:om_account_accountant.menu_accounting_bank_and_cash
+msgid "Bank and Cash"
+msgstr "الحسابات المصرفية والنقدية"
+
+#. module: om_account_accountant
+#: model_terms:ir.ui.view,arch_db:om_account_accountant.view_change_lock_date
+msgid "Cancel"
+msgstr "الغاء"
+
+#. module: om_account_accountant
+#: model:ir.ui.menu,name:om_account_accountant.menu_accounting_statement_cash
+msgid "Cash Registers"
+msgstr "سجلات النقد"
+
+#. module: om_account_accountant
+#: model:ir.model,name:om_account_accountant.model_change_lock_date
+msgid "Change Lock Date"
+msgstr "تغيير تاريخ القفل"
+
+#. module: om_account_accountant
+#: model:ir.ui.menu,name:om_account_accountant.menu_account_coa_template
+msgid "Chart of Accounts Templates"
+msgstr "قوالب مخطط الحسابات"
+
+#. module: om_account_accountant
+#: model_terms:ir.actions.act_window,help:om_account_accountant.actions_account_fiscal_year
+msgid "Click here to create a new fiscal year."
+msgstr "انقر هنا لإنشاء سنة مالية جديدة."
+
+#. module: om_account_accountant
+#: model:ir.model.fields,field_description:om_account_accountant.field_account_fiscal_year__company_id
+#: model:ir.model.fields,field_description:om_account_accountant.field_change_lock_date__company_id
+msgid "Company"
+msgstr "مؤسسة"
+
+#. module: om_account_accountant
+#: model:ir.model,name:om_account_accountant.model_res_config_settings
+msgid "Config Settings"
+msgstr "ضبط الاعدادات"
+
+#. module: om_account_accountant
+#: model:ir.model.fields,field_description:om_account_accountant.field_account_fiscal_year__create_uid
+#: model:ir.model.fields,field_description:om_account_accountant.field_change_lock_date__create_uid
+msgid "Created by"
+msgstr "انشئ بواسطة"
+
+#. module: om_account_accountant
+#: model:ir.model.fields,field_description:om_account_accountant.field_account_fiscal_year__create_date
+#: model:ir.model.fields,field_description:om_account_accountant.field_change_lock_date__create_date
+msgid "Created on"
+msgstr "انشئ في"
+
+#. module: om_account_accountant
+#: model_terms:ir.ui.view,arch_db:om_account_accountant.res_config_settings_view_form
+msgid "Define fiscal years of more or less than one year"
+msgstr "تحديد السنوات المالية التي تزيد أو تقل عن سنة واحدة"
+
+#. module: om_account_accountant
+#: model:ir.model.fields,field_description:om_account_accountant.field_account_fiscal_year__display_name
+#: model:ir.model.fields,field_description:om_account_accountant.field_change_lock_date__display_name
+#: model:ir.model.fields,field_description:om_account_accountant.field_res_config_settings__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: om_account_accountant
+#: model:ir.model.fields,field_description:om_account_accountant.field_account_fiscal_year__date_to
+msgid "End Date"
+msgstr "تاريخ الانتهاء"
+
+#. module: om_account_accountant
+#: model:ir.model.fields,help:om_account_accountant.field_account_fiscal_year__date_to
+msgid "Ending Date, included in the fiscal year."
+msgstr "تاريخ الانتهاء ، متضمن في السنة المالية."
+
+#. module: om_account_accountant
+#: model_terms:ir.ui.view,arch_db:om_account_accountant.res_config_settings_view_form
+msgid "Fiscal Period Closing"
+msgstr "إقفال الفترة المالية"
+
+#. module: om_account_accountant
+#: model:ir.actions.act_window,name:om_account_accountant.action_account_fiscal_position_template
+#: model:ir.ui.menu,name:om_account_accountant.menu_account_fiscal_position_template
+msgid "Fiscal Position Templates"
+msgstr "قالب الموقف الضريبي"
+
+#. module: om_account_accountant
+#: model:ir.model,name:om_account_accountant.model_account_fiscal_year
+#: model:ir.ui.menu,name:om_account_accountant.menu_fiscal_year
+#: model_terms:ir.ui.view,arch_db:om_account_accountant.res_config_settings_view_form
+msgid "Fiscal Year"
+msgstr "السنة المالية"
+
+#. module: om_account_accountant
+#: model:ir.actions.act_window,name:om_account_accountant.actions_account_fiscal_year
+#: model:ir.model.fields,field_description:om_account_accountant.field_res_config_settings__group_fiscal_year
+#: model_terms:ir.ui.view,arch_db:om_account_accountant.res_config_settings_view_form
+msgid "Fiscal Years"
+msgstr "السنين المالية"
+
+#. module: om_account_accountant
+#: model:ir.model.fields,field_description:om_account_accountant.field_res_config_settings__fiscalyear_last_day
+msgid "Fiscalyear Last Day"
+msgstr "اليوم الاخير للسنة المالية"
+
+#. module: om_account_accountant
+#: model:ir.model.fields,field_description:om_account_accountant.field_res_config_settings__fiscalyear_last_month
+msgid "Fiscalyear Last Month"
+msgstr "الشهر الاخير للسنة المالية"
+
+#. module: om_account_accountant
+#: model_terms:ir.ui.view,arch_db:om_account_accountant.view_account_payment_method_search
+msgid "Group By"
+msgstr "تجميع باستخدام"
+
+#. module: om_account_accountant
+#: model:ir.model.fields,field_description:om_account_accountant.field_account_fiscal_year__id
+#: model:ir.model.fields,field_description:om_account_accountant.field_change_lock_date__id
+#: model:ir.model.fields,field_description:om_account_accountant.field_res_config_settings__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: om_account_accountant
+#: model_terms:ir.ui.view,arch_db:om_account_accountant.res_config_settings_view_form
+msgid "Last Day"
+msgstr "اخر يوم"
+
+#. module: om_account_accountant
+#: model:ir.model.fields,field_description:om_account_accountant.field_account_fiscal_year____last_update
+#: model:ir.model.fields,field_description:om_account_accountant.field_change_lock_date____last_update
+#: model:ir.model.fields,field_description:om_account_accountant.field_res_config_settings____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: om_account_accountant
+#: model:ir.model.fields,field_description:om_account_accountant.field_account_fiscal_year__write_uid
+#: model:ir.model.fields,field_description:om_account_accountant.field_change_lock_date__write_uid
+msgid "Last Updated by"
+msgstr "اخر تعديل تم بواسطة"
+
+#. module: om_account_accountant
+#: model:ir.model.fields,field_description:om_account_accountant.field_account_fiscal_year__write_date
+#: model:ir.model.fields,field_description:om_account_accountant.field_change_lock_date__write_date
+msgid "Last Updated on"
+msgstr "اخر تعديل تم على"
+
+#. module: om_account_accountant
+#: model:ir.model.fields,field_description:om_account_accountant.field_res_config_settings__fiscalyear_lock_date
+msgid "Lock Date"
+msgstr "تاريخ الاغلاق"
+
+#. module: om_account_accountant
+#: model:ir.model.fields,field_description:om_account_accountant.field_change_lock_date__fiscalyear_lock_date
+msgid "Lock Date for All Users"
+msgstr "تاريخ الاغلاق لكل المستخدمين"
+
+#. module: om_account_accountant
+#: model:ir.model.fields,field_description:om_account_accountant.field_change_lock_date__period_lock_date
+#: model:ir.model.fields,field_description:om_account_accountant.field_res_config_settings__period_lock_date
+msgid "Lock Date for Non-Advisers"
+msgstr "تاريخ الاغلاق لكل المستخدمين غيرغير المستشارين"
+
+#. module: om_account_accountant
+#: model:ir.ui.menu,name:om_account_accountant.menu_action_change_lock_date
+msgid "Lock Dates"
+msgstr "تواريخ الاغلاق"
+
+#. module: om_account_accountant
+#: model:ir.actions.act_window,name:om_account_accountant.action_view_change_lock_date
+msgid "Lock your Fiscal Period"
+msgstr "اغلق فترتك المالية"
+
+#. module: om_account_accountant
+#: model_terms:ir.ui.view,arch_db:om_account_accountant.res_config_settings_view_form
+msgid "Lock your fiscal period"
+msgstr "اغلق فترتك المالية"
+
+#. module: om_account_accountant
+#: model:ir.model.fields,field_description:om_account_accountant.field_account_fiscal_year__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: om_account_accountant
+#: model:ir.model.fields,help:om_account_accountant.field_change_lock_date__tax_lock_date
+msgid ""
+"No users can edit journal entries related to a tax prior and inclusive of "
+"this date."
+msgstr ""
+"لا يمكن لأي مستخدم تعديل قيود دفتر اليومية المتعلقة بضريبة سابقة وتشمل\n "
+"هذا التاريخ ."
+
+#. module: om_account_accountant
+#: model:ir.model.fields,help:om_account_accountant.field_res_config_settings__fiscalyear_lock_date
+msgid ""
+"No users, including Advisers, can edit accounts prior to and inclusive of "
+"this date. Use it for fiscal year locking for example."
+msgstr ""
+"لا يمكن لأي مستخدم ، بما في ذلك المستشارين ، تعديل الحسابات قبل\n "
+" هذا التاريخ وشموله. استخدمه لقفل السنة المالية على سبيل المثال."
+
+#. module: om_account_accountant
+#: model:ir.model.fields,help:om_account_accountant.field_change_lock_date__fiscalyear_lock_date
+msgid ""
+"No users, including Advisers, can edit accounts prior to and inclusive of "
+"this date. Use it for fiscal year locking."
+msgstr ""
+"لا يمكن لأي مستخدم ، بما في ذلك المستشارين ، تعديل الحسابات قبل\n "
+"هذا التاريخ. استخدمه لقفل السنة المالية."
+
+#. module: om_account_accountant
+#: model:ir.model.fields,help:om_account_accountant.field_res_config_settings__period_lock_date
+msgid ""
+"Only users with the 'Adviser' role can edit accounts prior to and inclusive "
+"of this date. Use it for period locking inside an open fiscal year, for "
+"example."
+msgstr ""
+"يمكن فقط للمستخدمين الذين لديهم دور المستشار تعديل الحسابات قبل هذا التاريخ وشاملاً له\n "
+" استخدمه لفترة القفل داخل سنة مالية مفتوحة\n "
+"مثلا."
+
+
+#. module: om_account_accountant
+#: model:ir.model.fields,help:om_account_accountant.field_change_lock_date__period_lock_date
+msgid ""
+"Only users with the Adviser role can edit accounts prior to and inclusive of"
+" this date. Use it for period locking inside an open fiscal year."
+msgstr ""
+"يمكن فقط للمستخدمين الذين لديهم دور المستشار تعديل الحسابات قبل هذا التاريخ وشاملاً له\n"
+" .  استخدمه لفترة القفل داخل سنة مالية مفتوحة."
+
+
+#. module: om_account_accountant
+#: model_terms:ir.ui.view,arch_db:om_account_accountant.view_account_payment_method_search
+msgid "Payment Method"
+msgstr "وسيلة الدفع"
+
+#. module: om_account_accountant
+#: model:ir.actions.act_window,name:om_account_accountant.action_account_payment_method
+#: model:ir.ui.menu,name:om_account_accountant.menu_account_payment_method
+#: model_terms:ir.ui.view,arch_db:om_account_accountant.view_account_payment_method_form
+#: model_terms:ir.ui.view,arch_db:om_account_accountant.view_account_payment_method_search
+#: model_terms:ir.ui.view,arch_db:om_account_accountant.view_account_payment_method_tree
+msgid "Payment Methods"
+msgstr "طرق الدفع"
+
+#. module: om_account_accountant
+#: model_terms:ir.ui.view,arch_db:om_account_accountant.view_account_payment_method_search
+msgid "Payment Type"
+msgstr "نوع الدفع"
+
+#. module: om_account_accountant
+#: model:ir.actions.server,name:om_account_accountant.action_account_reconciliation
+msgid "Reconcile"
+msgstr "التسوية "
+
+#. module: om_account_accountant
+#: model_terms:ir.ui.view,arch_db:om_account_accountant.res_config_settings_view_form
+msgid ""
+"Record the cost of a good as an expense when this good is\n"
+"                                    invoiced to a final customer (instead of recording the cost as soon\n"
+"                                    as the product is received in stock)."
+msgstr ""
+"سجل تكلفة السلعة كمصروف عندما يتم\n"
+"                                    إصدار فاتورة بهذه السلعة إلى عميل نهائي\n"
+"                                    (بدلاً من تسجيل التكلفة بمجرد استلام المنتج في المخزون )."
+
+#. module: om_account_accountant
+#: model:ir.model.fields,help:om_account_accountant.field_res_config_settings__anglo_saxon_accounting
+msgid ""
+"Record the cost of a good as an expense when this good is invoiced to a "
+"final customer."
+msgstr ""
+"سجل تكلفة السلعة كنفقات عندما يتم إصدار فاتورة بهذه السلعة إلى\n  "
+"العميل النهائي."
+
+
+#. module: om_account_accountant
+#: model_terms:ir.ui.view,arch_db:om_account_accountant.view_change_lock_date
+msgid "Save"
+msgstr "حفظ"
+
+#. module: om_account_accountant
+#: model:ir.model.fields,field_description:om_account_accountant.field_account_fiscal_year__date_from
+msgid "Start Date"
+msgstr "تاريخ البدء"
+
+#. module: om_account_accountant
+#: model:ir.model.fields,help:om_account_accountant.field_account_fiscal_year__date_from
+msgid "Start Date, included in the fiscal year."
+msgstr "تاريخ البدء متضمناً السنة المالية"
+
+#. module: om_account_accountant
+#: model:ir.model.fields,field_description:om_account_accountant.field_change_lock_date__tax_lock_date
+msgid "Tax Lock Date"
+msgstr "تاريخ اغلاق الضرية"
+
+#. module: om_account_accountant
+#: model:ir.ui.menu,name:om_account_accountant.menu_account_templates
+msgid "Templates"
+msgstr "القوالب"
+
+#. module: om_account_accountant
+#: code:addons/om_account_accountant/models/account_fiscal_year.py:0
+#, python-format
+msgid "The ending date must not be prior to the starting date."
+msgstr "يجب ألا يكون تاريخ الانتهاء قبل تاريخ البدء"
+
+#. module: om_account_accountant
+#: model:ir.model.fields,field_description:om_account_accountant.field_res_config_settings__anglo_saxon_accounting
+msgid "Use anglo-saxon accounting"
+msgstr "استخدام محاسبة (انجلو ساكسون)"
+
+#. module: om_account_accountant
+#: code:addons/om_account_accountant/wizard/change_lock_date.py:0
+#, python-format
+msgid "You Are Not Allowed To Perform This Operation"
+msgstr "ليس مخولاً لك اجراء هذه العملية"
+
+#. module: om_account_accountant
+#: code:addons/om_account_accountant/models/account_fiscal_year.py:0
+#, python-format
+msgid ""
+"You can not have an overlap between two fiscal years, please correct the "
+"start and/or end dates of your fiscal years."
+msgstr ""
+"لا يمكن أن يكون لديك تداخل بين سنتين ماليتين ,  يرجى تصحيح\n "
+"تواريخ بداية و/أو نهاية سنواتك المالية."
+
+

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
+<!--here we define each report with its name and model and the name that will take it when downloaded-->
 <odoo>
     <record id="action_custom_tax_report" model="ir.actions.report">
         <field name="name">Tax Report</field>

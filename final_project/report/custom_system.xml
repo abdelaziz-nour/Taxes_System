@@ -5,16 +5,19 @@
             <t t-foreach="docs" t-as="o">
                 <t t-call="web.internal_layout">
                     <div class="page">
+<!--                        page header-->
                         <h1>
                             <div style="text-align:center;">System Report</div>
                         </h1>
+<!--                        vertical white space-->
                         <br style="line-height: 20px;"/>
 
                         <div class="row mt32 mb32">
+                            <!--    separate the row into 4 columns-->
                             <div class="col-4">
                                 <div>
                                     <strong>Admin:</strong>
-                                    <span t-esc="docs.accountant.display_name"/>
+                                    <span t-esc="docs.admin.display_name"/>
                                 </div>
                                 <div>
                                     <strong>All Reports Count:</strong>
@@ -24,6 +27,7 @@
                                 </div>
 
                             </div>
+                            <!--    separate the row into 4 columns-->
                             <div class="col-4">
                                 <p>
                                     <strong>Date from :</strong>
@@ -33,6 +37,7 @@
                                     <span t-esc="docs.date_to"/>
                                 </p>
                             </div>
+                            <!--    separate the row into 4 columns-->
                             <div class="col-4">
                                 <p>
                                     <strong>Total Taxes Amount :</strong>
@@ -43,7 +48,9 @@
                                 </p>
                             </div>
                         </div>
+<!--                        vertical white space-->
                         <br style="line-height: 10px;"/>
+<!--                        table definition-->
                         <table class="table table-sm table-reports">
                             <thead>
                                 <tr>
@@ -54,7 +61,8 @@
                             <tbody>
                                 <tr t-foreach="docs" t-as="o">
                                     <td>
-                                        <t t-if="o.computed_taxes_names">
+<!--                                            reformat the list of string and spilite each element ,-->
+<!--                                            taking out the [] and the '' and print what between them.-->                                        <t t-if="o.computed_taxes_names">
                                             <t t-set="elements"
                                                t-value="o.computed_taxes_names.strip('[').strip(']').strip('\'').split('\', \'')"/>
                                             <t t-foreach="elements" t-as="element">
@@ -64,7 +72,8 @@
                                         </t>
                                     </td>
                                     <td class="text-right">
-                                        <t t-if="o.computed_profitloss_names">
+<!--                                            reformat the list of string and spilite each element ,-->
+<!--                                            taking out the [] and the '' and print what between them.-->                                        <t t-if="o.computed_profitloss_names">
                                             <t t-set="elements"
                                                t-value="o.computed_profitloss_names.strip('[').strip(']').strip('\'').split('\', \'')"/>
                                             <t t-foreach="elements" t-as="element">
